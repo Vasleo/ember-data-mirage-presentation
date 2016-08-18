@@ -1,0 +1,36 @@
+{{outlet}}
+
+<table border="1px">
+  <tr>
+    <th>
+      ArtistId
+    </th>
+    <th>
+      ArtistName
+    </th>
+    <th>
+      primaryGenreName
+    </th>
+    <th>
+      ArtistLink
+    </th>
+  </tr>
+  {{!-- {{#each model.results as |item|}} --}}
+  {{#each model as |item|}}
+    <tr>
+      <td>
+        {{item.artistId}}
+        {{!-- {{#link-to "albums" (query-params id=item.artistId)}} {{item.artistId}} {{/link-to}} --}}
+      </td>
+      <td>
+        {{item.artistName}}
+      </td>
+      <td>
+        {{item.primaryGenreName}}
+      </td>
+      <td>
+        <a target="blank" href={{item.artistLinkUrl}}>View</a>
+      </td>
+    </tr>
+  {{/each}}
+</table>

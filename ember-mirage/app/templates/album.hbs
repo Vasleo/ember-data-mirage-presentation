@@ -1,0 +1,90 @@
+{{outlet}}
+<h3> List Of Tracks In This Albums.</h3>
+<table>
+  <tr>
+    <td>
+      <img src={{searchResults.results.[0].artworkUrl100}}>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Album Name :
+    </td>
+    <td>
+      {{searchResults.results.[0].collectionName}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Artist Name :
+    </td>
+    <td>
+      {{searchResults.results.[0].artistName}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Genre :
+    </td>
+    <td>
+      {{searchResults.results.[0].primaryGenreName}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Release Date :
+    </td>
+    <td>
+      {{searchResults.results.[0].releaseDate}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Track Count :
+    </td>
+    <td>
+      {{searchResults.results.[0].trackCount}}
+    </td>
+  </tr>
+</table>
+
+<br/><br/><br/>
+
+<table border="1px">
+  <tr>
+    <th>
+      Track No
+    </th>
+    <th>
+      TrackName
+    </th>
+    <th>
+      TrackDuration
+    </th>
+    <th>
+      TrackExplicitness
+    </th>
+    <th>
+      TrackPrice
+    </th>
+  </tr>
+  {{#each searchResults.results as |item|}}
+    <tr>
+      <td>
+        {{item.trackNumber}}
+      </td>
+      <td>
+        {{item.trackName}}
+      </td>
+      <td>
+        {{item.trackTimeMillis}}
+      </td>
+      <td>
+        {{item.trackExplicitness}}
+      </td>
+      <td>
+        {{item.trackPrice}}
+      </td>
+    </tr>
+  {{/each}}
+</table>
